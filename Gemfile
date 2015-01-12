@@ -4,6 +4,7 @@ source 'https://rubygems.org'
 
 # Server jQuery from a CDN.
 gem 'jquery-cdn', '2.1.3'
+gem 'twitter'
 
 group :development do
   # Opens outgoing emails in browser
@@ -25,6 +26,8 @@ group :development, :test do
   # To test features with JS, use the webkit driver. 
   # Requires QT (can be installed via brew) https://github.com/thoughtbot/capybara-webkit/wiki/Installing-Qt-and-compiling-capybara-webkit
   #gem 'capybara-webkit'
+
+  gem 'dotenv-rails'
 end
 
 # Rails Default stuff that I kept in because it's useful.
