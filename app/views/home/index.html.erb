@@ -2,7 +2,9 @@
 <p>This show examples of how to do common task in rails.</p>
 
 <ul>
-  <% TwitterApi.our_public_tweets.each do |tweet| %>
-    <li><%= parsed_tweet tweet %></li>
+  <% cache('our_public_tweets', expires_in: 6.hours) do %>
+    <% TwitterApi.our_public_tweets.each do |tweet| %>
+      <li><%= parsed_tweet tweet %></li>
+    <% end %>
   <% end %>
 </ul>
